@@ -1,0 +1,113 @@
+:root {
+    --primary-color: #2563EB;     /* Royal Blue */
+    --primary-dark: #1E40AF;
+    --teal-color: #0D9488;        /* Teal */
+    --dark-blue: #1E293B;         /* Slate 800 */
+    --bg-light: #F8FAFC;          /* Slate 50 */
+}
+
+body.bg-light-dynamic {
+    background-color: #F1F5F9;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+/* Container utama login split screen */
+.auth-container {
+    max-width: 1050px;
+    min-height: 650px;
+    background-color: #ffffff;
+}
+
+/* Sisi kiri: Gradient background konsisten dengan halaman login */
+.bg-gradient-brand {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #1D4ED8 40%, var(--teal-color) 100%);
+    z-index: 1;
+}
+
+.brand-logo {
+    font-size: 1.5rem;
+    letter-spacing: -0.5px;
+}
+
+.text-dark-blue {
+    color: var(--dark-blue);
+}
+
+/* Desain Kustom Radio Card Tiles untuk Pilihan Peran */
+.role-card {
+    background-color: var(--bg-light);
+    border: 2px solid #E2E8F0;
+    color: #64748B;
+    transition: all 0.25s ease;
+}
+
+.role-card:hover {
+    background-color: #ffffff;
+    border-color: #CBD5E1;
+    color: #334155;
+}
+
+.icon-role {
+    color: #94A3B8;
+    transition: color 0.25s ease;
+}
+
+/* Ketika Radio Button di-check (Dipilih oleh user) */
+.btn-check:checked + .role-card {
+    background-color: #ffffff !important;
+    border-color: var(--primary-color) !important;
+    color: var(--primary-color) !important;
+    box-shadow: 0 10px 15px -3px rgba(37, 99, 219, 0.1);
+}
+
+.btn-check:checked + .role-card .icon-role {
+    color: var(--primary-color) !important;
+}
+
+/* Kustomisasi Input Form */
+.input-group-text {
+    border-color: #E2E8F0;
+    color: #94A3B8;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 219, 0.15);
+    background-color: #ffffff !important;
+}
+
+.form-control::placeholder {
+    color: #94A3B8;
+    font-size: 0.9rem;
+}
+
+/* Tombol Submit Kustom */
+.btn-brand-primary {
+    background-color: var(--primary-color);
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.btn-brand-primary:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-1px);
+}
+
+.extra-small {
+    font-size: 0.75rem;
+}
+
+/* Responsivitas form pada layar mobile */
+@media (max-width: 576px) {
+    .auth-container {
+        margin: 10px !important;
+    }
+    
+    .role-card {
+        padding: 1rem 0.5rem !important;
+    }
+    
+    .role-card span {
+        font-size: 0.75rem;
+    }
+}

@@ -1,0 +1,121 @@
+:root {
+    --primary-color: #2563EB;     /* Royal Blue */
+    --primary-dark: #1E40AF;
+    --teal-color: #0D9488;        /* Teal */
+    --dark-blue: #1E293B;         /* Slate 800 */
+    --bg-light: #F8FAFC;          /* Slate 50 */
+}
+
+body.bg-light-dynamic {
+    background-color: #F1F5F9;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+/* Container utama login split screen */
+.auth-container {
+    max-width: 1050px;
+    min-height: 600px;
+    background-color: #ffffff;
+}
+
+/* Sisi kiri: Gradient background dengan warna identitas Finetern */
+.bg-gradient-brand {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #1D4ED8 40%, var(--teal-color) 100%);
+    z-index: 1;
+}
+
+/* Dekorasi estetik tambahan di sisi background kiri */
+.bg-gradient-brand::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    right: -20%;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    z-index: -1;
+}
+
+.brand-logo {
+    font-size: 1.5rem;
+    letter-spacing: -0.5px;
+}
+
+.text-dark-blue {
+    color: var(--dark-blue);
+}
+
+.text-teal {
+    color: var(--teal-color);
+}
+
+/* Kustomisasi Nav Pills Bootstrap untuk Role Selector */
+#roleTab .nav-link {
+    color: #64748B;
+    background-color: transparent;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+}
+
+#roleTab .nav-link.active {
+    background-color: #ffffff;
+    color: var(--primary-color);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    border-color: #E2E8F0;
+}
+
+/* Kustomisasi Input Form */
+.input-group-text {
+    border-color: #E2E8F0;
+    color: #94A3B8;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 219, 0.15);
+    background-color: #ffffff !important;
+}
+
+.form-control::placeholder {
+    color: #94A3B8;
+    font-size: 0.9rem;
+}
+
+/* Tombol Submit Kustom */
+.btn-brand-primary {
+    background-color: var(--primary-color);
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.btn-brand-primary:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-1px);
+}
+
+.btn-brand-primary:active {
+    transform: translateY(0);
+}
+
+.link-forgot {
+    font-size: 0.8rem;
+    color: #64748B;
+    transition: color 0.2s;
+}
+
+.link-forgot:hover {
+    color: var(--primary-color);
+}
+
+/* Responsivitas form pada layar mobile */
+@media (max-width: 576px) {
+    .auth-container {
+        margin: 10px !important;
+    }
+    
+    #roleTab .nav-link {
+        font-size: 0.8rem;
+        padding: 8px 4px;
+    }
+}
